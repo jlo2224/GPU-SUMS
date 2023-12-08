@@ -1,0 +1,6 @@
+#!/bin/bash
+
+nvcc -o $1 $1.cu
+for ((i = 16777216; i <= 1073741824; i += 16777216)); do
+    ./"$1" "$i" >> ../runtimes/"$1"output
+done
